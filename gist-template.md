@@ -82,3 +82,6 @@ Hi! My name is Christina Bohn. I hope this regex tutorial was helpful! I'm curre
 Here's my Github:
 
     * https://github.com/ChristinaBohn
+
+
+Thanks for reading!
