@@ -23,15 +23,28 @@ This tutorial will break down each component of a regular expression, or regex, 
 
 ### Anchors
 
-The characters "^" and "\$" function as anchors to tell the expression where to look for specific characters. The caret anchor "^" points to the beginning of a string, matching the position before the first character. The dollar anchor "\$" matches the position directly following the last character in the string. These help ensure a string will fully match the intended pattern.
+The characters "^" and "\$" function as anchors to tell the expression where to look for specific characters. The caret anchor "^" points to the beginning of a string, matching the position before the first character. The dollar anchor "\$" matches the position directly following the last character in the string. These help ensure a string will fully match the intended pattern. 
+
+**Example** "codingcathy@mail.com" will match the email regex in this tutorial:
+
+```
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
 
 ### Quantifiers
 
-The quanitfies used in this email regex are "+" and "{2,6}". The plus "+" quanifier refers to one or more characters. Numbers inside curly brackets refer to a specific number of characters. With two numbers separated by a comma, these will be the minimum and maximum number of characters, forming a range. For this example, we have a range from two to six characters specified for the last part of the email address (.com, .net, etc.).
+The quanitfies used in this email regex are "+" and "{2,6}". The plus "+" quanifier refers to one or more characters. Numbers inside curly brackets refer to a specific number of characters. With two numbers separated by a comma, these will be the minimum and maximum number of characters, forming a range. For this example, we have a range from two to six characters specified for the last part of the email address (.com, .net, etc.). 
+
+**Example** The following regex will match any 5-character word, such as "doggo" or "t0ast" or "12345". For further context, \b denotes a word boundary and \w will point to any alphanumeric character:
+```
+\b\w{5}\b
+```
 
 ### Grouping Constructs
 
-Subexpressions are grouped using parentheses: ( subexpression ). The subexpressions in this email regex are:
+Subexpressions are grouped using parentheses: ( subexpression ). 
+
+**Example** The subexpressions in this email regex are:
 
 ```
 ([a-z0-9_\.-]+),    ([\da-z\.-]+), and    ([a-z\.]{2,6})
@@ -67,9 +80,19 @@ Certain specific classes of characters are predefined in bracket expressions. No
 
 There are no OR operators being used in this expression, but OR is denoted with the pipe symbol "|".
 
+**Example** The following regex will match "net" or "com":
+```
+(net|com)
+```
+
 ### Flags
 
 Optional flags can be used to add special functions to regular expressions, such as adding "i" for a case-insensitive search or "g" for a global search.
+
+**Example** The following regex will match kitty, KITTY, kItTy, etc.
+```
+/kitty/i
+```
 
 ### Character Escapes
 
